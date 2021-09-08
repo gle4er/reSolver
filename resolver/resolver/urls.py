@@ -22,8 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # django-registration URLs
-    path('accounts/', include('django_registration.backends.one_step.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('registration.backends.simple.urls')),
 
     # app view
     path('', GreetingsPage.as_view(), name='greetings'),

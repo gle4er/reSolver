@@ -35,15 +35,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # django-registration-redux
+    'registration',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # django-registration
-    'django_registration',
 
     # Apps from project
     'help_requister',
@@ -64,7 +64,7 @@ ROOT_URLCONF = 'resolver.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR],
+        'DIRS': [os.path.join(BASE_DIR, 'resolver')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
