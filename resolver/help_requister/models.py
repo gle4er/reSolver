@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.urls import reverse
 
 
 class Problem(models.Model):
@@ -28,3 +29,6 @@ class Problem(models.Model):
     description = models.TextField(
         verbose_name='Problem full description',
     )
+
+    def get_absolute_url(self):
+        return reverse('problem', kwargs={'pk': self.pk})
