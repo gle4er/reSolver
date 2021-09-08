@@ -7,7 +7,13 @@
 Haio, {{ user.username }}
 {% else %}
 <p>Haio, anonymous</p>
-<p>Wonna for some <a href="{% url 'auth_login' %}">{% trans "Log in" %}</a>?</p>
+{% endif %}
+
+<p>This service is made for requesting help from people and corps, who knows about Your problems.</p>
+<p>Post over here request and we will found your 'fixer'.</p>
+
+{% if not user.is_authenticated %}
+<p>First, wonna for some <a href="{% url 'auth_login' %}">{% trans "Log in" %}</a>?</p>
 {% endif %}
 
 {% endblock %}
