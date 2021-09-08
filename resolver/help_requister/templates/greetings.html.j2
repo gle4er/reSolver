@@ -1,1 +1,13 @@
-Haio, {{ username }}
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+Haio, {{ user.username }}
+{% else %}
+<p>Haio, anonymous</p>
+<p>Wonna for some <a href="{% url 'auth_login' %}">{% trans "Log in" %}</a>?</p>
+{% endif %}
+
+{% endblock %}
