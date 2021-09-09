@@ -4,7 +4,7 @@ from django.urls import reverse
 
 
 class Problem(models.Model):
-    user = models.OneToOneField(
+    user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
