@@ -31,4 +31,4 @@ class Problem(models.Model):
     )
 
     def get_absolute_url(self):
-        return reverse('problem', kwargs={'pk': self.pk})
+        return reverse('problem_detail', kwargs={'problem_id': self.pk})

@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from help_requister.views import GreetingsPage, ProblemForm
+from help_requister.views import (
+    GreetingsPage, ProblemForm, ProblemDetail,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +28,6 @@ urlpatterns = [
 
     # app view
     path('', GreetingsPage.as_view(), name='greetings'),
+    path('problem/<problem_id>', ProblemDetail.as_view(), name='problem_detail'),
     path('request_help', ProblemForm.as_view(), name='problem_form'),
 ]
